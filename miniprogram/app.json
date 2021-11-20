@@ -1,0 +1,32 @@
+{
+  
+  "pages": [
+    "pages/loveBox/index",
+    "pages/scrip/index",
+    "pages/index/index",
+    "pages/setUser/index",
+    "pages/loveUser/index",
+    "pages/details/index"
+  ],
+  "window": {
+    "navigationStyle":"custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/loveBox/index",
+        "text": "首页",
+        "iconPath": "/images/sy0.png",
+        "selectedIconPath": "/images/sy1.png"
+      },
+      {
+        "pagePath": "pages/loveUser/index",
+        "text": "我的",
+        "iconPath": "/images/hy0.png",
+        "selectedIconPath": "/images/hy1.png"
+      }
+    ]
+    
+  }
+}

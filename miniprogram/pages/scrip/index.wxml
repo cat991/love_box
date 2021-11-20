@@ -1,0 +1,36 @@
+<!--pages/scrip/index.wxml-->
+<van-dropdown-menu active-color="#70C5C4">
+  <van-dropdown-item value="{{ value1 }}" bind:change="onSwitch1Change" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}"  bind:change="onSwitch2Change" options="{{ option2 }}" />
+</van-dropdown-menu>
+<view wx:if="{{dateList==0}}">
+  <van-empty image="search" description="内容为空" />
+</view>
+<view wx:else="{{dateList}}">
+<view wx:for="{{dateList}}" wx:key="index" wx:for-item="date">
+  <van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose">
+    <van-cell-group>
+      <van-cell title="单元格" value="内容" />
+      <view class="cell">
+        <image src="{{date.user_info.avatarUrl}}"></image>
+        <view>
+          <text>昵称：{{date.user_info.nickName}}</text>
+          <view >
+            <text class="distance">年龄：{{date.age}}</text>
+            <text>微信号：{{date.wx}}</text>
+          </view>
+          <text wx:if="{{date.others==null}}">未被抽到</text>
+          <text wx:if="{{date.others}}">已被抽取，等待对方添加好友</text>
+        </view>
+      </view>
+
+    </van-cell-group>
+    <view data-value="{{date._id}}" bindtap="setValue" slot="right">删除</view>
+  </van-swipe-cell>
+</view>
+</view>
+
+<van-dialog id="van-dialog" />
+
+<!-- 轻提示弹窗 -->
+<van-toast id="van-toast" />

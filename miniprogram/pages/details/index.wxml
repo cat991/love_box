@@ -1,0 +1,32 @@
+<!--pages/details/index.wxml-->
+<!--pages/scrip/index.wxml-->
+<view wx:if="{{dateList==0}}">
+  <van-empty image="search" description="内容为空" />
+</view>
+<view wx:else="{{dateList}}">
+<view wx:for="{{dateList}}" wx:key="index">
+
+  <van-swipe-cell id="swipe-cell"  async-close bind:close="onClose">
+    <van-cell-group>
+      <van-cell title="单元格" value="内容" />
+      <view class="cell">
+        <image wx:if="{{item.number>0}}" src="{{url}}goid_1.png"></image>
+        <image wx:if="{{item.number<0}}" src="{{url}}goid_2.png"></image>
+        <view>
+          <text>金币：{{item.number}}</text>
+          <view >
+            <text class="distance">操作：{{item.text}}</text>
+        
+          </view>
+          <text>时间：{{item.formatDate}}</text>
+        </view>
+      </view>
+
+    </van-cell-group>
+  </van-swipe-cell>
+
+
+</view>
+</view>
+
+<van-dialog id="van-dialog" />

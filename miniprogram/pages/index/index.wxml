@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="tabBar">{{tabBarText}}</view>
+
+<van-image round width="10rem" height="10rem" lazy-load
+  src="{{url}}1636651805049.png" />
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <van-button
+      lain  type="info"
+      wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"  color="#88A9BA"
+      >授权登陆
+      </van-button>
+      <van-button 
+      lain  type="info"
+      wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"  color="#88A9BA"
+      >授权登陆
+      </van-button>
+    </block>
+  </view>
+
+</view>

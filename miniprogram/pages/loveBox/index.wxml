@@ -1,0 +1,90 @@
+<!--pages/loveBox/index.wxml-->
+<view class="tabBar">{{tabBarText}}</view>
+<van-notice-bar left-icon="volume-o" text="{{msgcontent}}" />
+
+<swiper autoplay interval="2000">
+  <swiper-item wx:for="{{swiperImage}}" wx:key="index">
+    <image src="{{url}}{{item}}" mode="widthFix" />
+  </swiper-item>
+</swiper>
+
+<!-- <view class="box">
+  <view class="box_bt column">
+    <view class="left">
+      {{boyNumber}}
+      <text>男性盲盒</text>
+    </view>
+    <view class="right">
+      <view>剩余</view>
+    </view>
+    
+  </view>
+  <view class="box_bt column">
+    <view class="left">
+      {{girlNumber}}
+      <text>女性盲盒</text>
+    </view>
+    <view class="right">
+      <view>剩余</view>
+    </view>
+  </view>
+</view> -->
+<view class="box">
+  <view class="box_bt nan">
+    <image class="miniImage" src="{{url}}box-hd.png" mode="aspectFit"></image>
+    <image class="bigImage" src="{{url}}box-1.png" mode="aspectFit"></image>
+    <button bindtap="getInfo" type="default" size="mini" data-sex="boy">抽取纸条</button>
+    <button size="mini" type="default" data-sex="boy" bindtap="putInfo">放入纸条</button>
+    <!-- <van-button bind:click="get" data-sex="boy" round plain type="info">抽个小哥哥</van-button>
+    <van-button plain type="primary" round bind:click="showPopup">放入男生纸条</van-button> -->
+  </view>
+  <view class="box_bt nv">
+    <image class="miniImage" src="{{url}}box-hd.png"></image>
+    <image class="bigImage" src="{{url}}box-2.png" mode="aspectFit"></image>
+    <button size="mini" type="default" bindtap="getInfo" data-sex="girl">抽取纸条</button>
+    <button size="mini" type="default" bindtap="putInfo" data-sex="girl">放入纸条</button>
+    <!-- <van-button color="red" bind:click="get" data-sex="girl" plain round type="info">抽个小妹妹</van-button>
+    <van-button plain round type="primary" bind:click="showPopup">放入女生纸条</van-button> -->
+  </view>
+</view>
+<van-divider contentPosition="center">恋爱盲盒</van-divider>
+
+<!-- 底部放入纸条弹出框 -->
+<van-action-sheet show="{{ show }}" bind:close="onClose" title="放入纸条">
+  <view class="putNote">
+    <van-cell-group>
+      <!-- 输入框 -->
+      <van-field value="{{ message }}" label="留言" type="textarea" placeholder="请输入你要给他/她的留言" autosize
+        border="{{ false }}" bind:change="onMessage" />
+      <van-cell-group>
+        <!-- 输入框 -->
+        <van-field value="{{ value }}" label="微信号" placeholder="输入你的微信号" input-align="right" maxlength="15"
+          border="{{ false }}" bind:change="onValue" />
+      </van-cell-group>
+      <!-- 输入框：年龄 -->
+      <van-field value="{{ age }}" label="年龄" placeholder="输入你的年龄" input-align="right" type="number" maxlength="2"
+        border="{{ false }}" bind:change="onAge" />
+      <!-- 上传图片组件 -->
+      <!-- <van-uploader
+            file-list="{{ fileList }}"
+            max-count="2"
+            bind:after-read="uploadToCloud"
+            disabled
+          /> -->
+      <button size="mini" type="default" bindtap="putInfoCloud">投入纸条</button>
+    </van-cell-group>
+
+  </view>
+</van-action-sheet>
+<!-- 抽取纸条信息展示 -->
+<van-popup show="{{ infoShow }}" bind:close="infoonClose">
+  <view class="putInfo">
+    <image src="{{putInfo.user_info.avatarUrl}}"></image>
+    <text>昵称:{{putInfo.user_info.nickName}}</text>
+    <text>年龄:{{putInfo.age}}</text>
+    <text>微信号：{{putInfo.wx}}</text>
+    <text class="content">{{putInfo.content}}</text>
+  </view>
+</van-popup>
+<!-- 轻提示弹窗 -->
+<van-toast id="van-toast" />

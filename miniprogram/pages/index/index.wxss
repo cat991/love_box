@@ -1,0 +1,21 @@
+page{
+  display: flex;
+  height: 100%;
+  background-color: #BBD8DE;
+  justify-items: center;
+  align-items: center;
+}
+.tabBar{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20rpx;
+  height: 120rpx;
+  width: 100%;
+}
+.container{
+  width: 100%;
+
+}
+
+

@@ -1,0 +1,27 @@
+/* pages/scrip/index.wxss */
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  display: flex;
+  width: 130rpx;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #f44;
+}
+.cell{
+  display: flex;
+  align-items: center;
+}
+.cell text{
+  font-size: 30rpx;
+}
+.cell image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin: 20rpx;
+}
+.distance{
+  margin:0 30rpx 0 0;
+}

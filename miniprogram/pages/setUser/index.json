@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationStyle":"default",
+  "navigationBarTitleText": "设置个人信息",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#70C5C4"
+}

@@ -1,0 +1,135 @@
+
+page{
+  background-color: whitesmoke;
+}
+.userbg{
+  height: 300rpx;
+  display: flex;
+  background-image: linear-gradient(to right, rgb(93, 203, 157), #70C5C4)
+}
+.userbg .userImage{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 80rpx 0 0 30rpx;
+  border-radius: 50%;
+}
+.userbg .userphone{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userphone{
+  display: flex;
+  flex-direction: column;
+}
+.userphone .vip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  font-size: 25rpx;
+  background-color: rgb(55,51,43);
+  color: rgb(200,175,133);
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  border-radius: 50rpx;
+}
+.userphone image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bg{
+  background-color: white;
+  padding: 20rpx;
+  margin: 30rpx;
+  border-radius: 10rpx;
+}
+.myorder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid  rgb(245, 239, 239) ;
+
+}
+.allorder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myorder text{
+  font-weight: bolder;
+}
+.allorder text{
+  font-weight:lighter;
+  font-size: 25rpx;
+}
+.allorder image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 15rpx;
+}
+.orderbtn{
+  display: flex;
+  flex-direction: row;
+}
+.orderbtn navigator{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200rpx;
+  height: 180rpx;
+  margin: 10rpx;
+}
+.orderbtn image{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 30rpx;
+}
+.orderbtn text{
+  font-size: 25rpx;
+}
+.setting{
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx;
+}
+.setting .set{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.setting text{
+  width: 700rpx;
+  height: 50rpx;
+  color: black;
+  background-color: black;
+}
+van-icon{
+  margin: 10rpx;
+}
+.br{
+  width: 100%;
+  height: 1rpx;
+  background-color: rgb(245, 239, 239);
+}
+.kefu{
+  width: 150rpx;
+  height: 165rpx;
+  background-color: #fff;
+  padding-top: 25rpx;
+  position: relative;
+  border: 0 solid #ebedf0;
+  border-bottom-width: 1px;
+}
+
+.kefu text{
+  color: var(--grid-item-text-color,#646566);
+  font-size: 24rpx;
+  cursor: text;
+  display: block;
+  left: 30rpx;
+  bottom: 0rpx;
+  position: absolute;
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index"
+
+  },
+  "navigationStyle":"default",
+  "navigationBarTitleText": "收支详情",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#70C5C4"
+}

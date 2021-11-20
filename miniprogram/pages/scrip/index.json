@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "navigationStyle":"default",
+  "navigationBarTitleText": "我的纸条",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#70C5C4"
+}

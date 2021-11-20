@@ -1,0 +1,82 @@
+<!--pages/loveUser/index.wxml-->
+<!--pages/user/user.wxml-->
+<!-- 我的详情 -->
+<view class="userbg">
+  <image class="userImage" src="{{userInfo.user_info.avatarUrl}}" />
+  <view class="userphone">
+    <text wx:if="{{!userInfo.user_info.avatarUrl}}" bindtap="getUserProfile">点击登陆</text>
+    <text wx:else="{{userInfo.user_info.avatarUrl}}">{{userInfo.user_info.nickName}}</text>
+    <view class="vip" wx:if="{{!userInfo.body_type}}" bindtap="upType">
+      <van-icon size="20px" name="vip-card" />单身贵族
+    </view>
+    <view class="vip" wx:else="{{userInfo.body_type}}" bindtap="upType">
+      <van-icon size="20px" name="invitation" />已脱单
+    </view>
+  </view>
+</view>
+<!-- 查看订单 -->
+<view class="bg">
+  <view class="myorder">
+    <text>我的金币</text>
+    <view class="allorder" data-url="hhh" bindtap="gotoPage">
+      <text>查看详情</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <!-- <view class="orderbtn">
+    <navigator class="payment" bindtap="">
+      <van-icon size="30px" name="gold-coin" />
+      <text>获取金币</text>
+    </navigator>
+    <navigator class="delivery">
+      <van-icon size="30px" name="bill" />
+      <text>支出详情</text>
+    </navigator>
+    <navigator class="goods">
+      <van-icon size="30px" name="card" />
+      <text>充值金币</text>
+    </navigator>
+    <navigator class="evaluation">
+      <van-icon size="30px" name="wechat" />
+      <text>客服</text>
+    </navigator>
+
+  </view> -->
+  <van-grid>
+  <van-grid-item icon="gold-coin"  bind:click="showPopup" text="获取金币" />
+  <van-grid-item icon="bill" bind:click="gotoPage" text="收支详情" />
+  <van-grid-item icon="invitation" bind:click="gotoNote" text="我的纸条" />
+
+  <!-- <van-grid-item icon="wechat" text="联系客服" /> -->
+  <button open-type='contact' session-from='weapp' class="kefu">
+    <van-icon size="30px" name="wechat" />
+      <text>联系客服</text>
+  </button>
+</van-grid>
+</view>
+
+
+<view class="bg">
+  <view class="setting" bindtap="getActivity">
+    <view class="set">
+      <van-icon size="25px" bind:click="showPopup" name="point-gift" />查看活动
+    </view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="br" />
+  <view class="setting" bindtap="getActivity">
+    <view class="set">
+      <van-icon size="25px" name="setting" />账号与安全
+    </view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="br" />
+  <navigator class="setting" url="/pages/setUser/index" relo>
+    <view class="set">
+      <van-icon size="25px" name="manager" />个人信息
+    </view>
+    <van-icon name="arrow" />
+  </navigator>
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose">暂无活动内容，敬请期待</van-popup>

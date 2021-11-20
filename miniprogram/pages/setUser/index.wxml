@@ -1,0 +1,4 @@
+<!--pages/setUser/index.wxml-->
+<view wx:if="{{dateList==0}}">
+  <van-empty image="search" description="暂无页面内容" />
+</view>
