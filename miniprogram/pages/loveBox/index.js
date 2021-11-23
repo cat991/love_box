@@ -46,6 +46,7 @@ Page({
       Toast('没有更多的金币了哦~')
       return
     }
+    
     var sexs = "男"
     if (res.currentTarget.dataset.sex == "girl") {
       sexs = "女"
@@ -68,7 +69,7 @@ Page({
           this.updateUserInfo(resp.data[rand-1]._id,wx.getStorageSync('openId'))
           this.infoShowPopup()
           common.upGold(wx.getStorageSync('openId'),-1,"抽取纸条")
-          this.selectUserInfo() 
+          this.selectUserInfo(resp.result.openid)
         }
       
       }
@@ -146,7 +147,7 @@ Page({
             age: "",
           })
           common.upGold(wx.getStorageSync('openId'),-1,'投入纸条')
-          this.selectUserInfo() 
+          this.selectUserInfo(resp.result.openid)
         }
       })
   },
