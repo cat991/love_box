@@ -68,6 +68,7 @@ Page({
           this.updateUserInfo(resp.data[rand-1]._id,wx.getStorageSync('openId'))
           this.infoShowPopup()
           common.upGold(wx.getStorageSync('openId'),-1,"抽取纸条")
+          this.selectUserInfo() 
         }
       
       }
@@ -145,6 +146,7 @@ Page({
             age: "",
           })
           common.upGold(wx.getStorageSync('openId'),-1,'投入纸条')
+          this.selectUserInfo() 
         }
       })
   },
