@@ -46,8 +46,10 @@ function upGold(openid,number,text){
 }
 const url = "/images/"    //开发者模式
 //生产环境
-// const url = "cloud://env-1gpwd13dd723c683.656e-env-1gpwd13dd723c683-1308225072/images/"
+// const url = "你的云储存地址/images/"
 
 module.exports.rand=rand
-module.exports.url = url
 module.exports.upGold=upGold
+module.exports = ({
+   url:url
+})
