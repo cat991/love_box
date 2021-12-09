@@ -48,8 +48,9 @@ const url = "/images/"    //开发者模式
 //生产环境
 // const url = "你的云储存地址/images/"
 
-module.exports.rand=rand
-module.exports.upGold=upGold
+
 module.exports = ({
-   url:url
+   url:url,
+   rand:rand,
+   upGold:upGold
 })
